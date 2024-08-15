@@ -1,0 +1,695 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Les variables globales */
+:root{  
+    --pr-color: #DA092C;
+    --sc-color: #FFE5E9;
+    --accent-color: #5096F1;
+    --text-color: #707070;
+    --br-size: 12px;
+    --br-sec-size: 6px;
+}
+
+
+button{
+    border: none;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+img{
+    width: 100px;
+    height: auto;
+}
+
+svg{
+    width: 35px;
+    fill: var(--accent-color);
+}
+
+html{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+    transition: all 0.4s ease;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10%;
+    min-height: 100vh;
+}
+
+section h1{
+    color: var(--pr-color);
+}
+
+.container{
+    width: 100%;
+}
+
+.container header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* border-bottom: 0.1px solid red; */
+    display: flex;
+    justify-self: space-between;
+    align-items: center;
+    height: 10vh;
+    padding-inline: 10%;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    background-color: white;
+    z-index: 1000;
+}
+
+
+.container header .logo{
+    align-self: left;
+}
+.container header .logo img{
+    width: 8vw;
+}
+
+.container header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.container header nav span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container header nav .not-home-btn::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: var(--pr-color);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transition: width 0.3s ease-in;
+    border-radius: 50px;
+}
+.container header nav .not-home-btn:hover::after{
+    width: 50%;
+}
+.container header nav .home-btn{
+    background-color:  var(--pr-color);
+    color: var(--sc-color);
+    border-radius: 3px;
+    transition: transform 0.3s ease;
+}
+
+.container header nav .home-btn:hover{
+    transform: scale(1.1);
+}
+.container header nav .home-btn a{
+    color: var(--sc-color);
+    padding: 3px 10px;
+    border-radius: var(--br-size);
+}
+
+.container header .subscribe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container header .subscribe{
+    position: relative;
+}
+.container header .subscribe a{
+    position: relative;
+    border: 1px solid var(--accent-color);
+    padding: 3px 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: border 0.3s ease;
+}
+.container header .subscribe a:hover{
+    color: var(--sc-color);
+    border: 1px solid transparent;
+}
+.container header .subscribe a::after{
+    content: "";
+    position: absolute;
+    background-color: var(--accent-color);
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.container header .subscribe a:hover::after{
+    width: 100%;
+    color: var(--sc-color);
+}
+
+
+
+/* section home pages  */
+
+
+.container .home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.container .home .image-cover{
+    width: 50%;
+}
+.container .home .image-cover img{
+    transition: transform 0.3s ease-in;
+    width: 500px;
+    margin-left: 2rem;;
+}
+
+.container .home .image-cover:hover img{
+    transform: scale(1.1);
+}
+
+.container .home .contents{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.home .contents h3{
+    color: var(--pr-color);
+    font-weight: 400;
+}
+.home .contents h1{
+    color: var(--accent-color);
+    font-size: 60px;
+}
+.home .contents h1 span{
+    color: var(--pr-color);
+    text-align: left;
+}
+
+.home .contents p{
+    font-size: 13px;
+    margin-bottom: 2rem;
+}
+
+.home .contents .line{
+    height: 2px;
+    width: 50px;
+    margin: 5% 0;
+    background-color: var(--pr-color);
+    border-radius: 12px;
+    transition: width 0.3s ease-in;
+}
+.home .contents:hover .line{
+    width: 100px;
+}
+
+.home .contents .social-links{
+    height: 50px;
+    margin-top: 25px;
+}
+.home .contents .social-links .links{
+    height: 100%;
+}
+.home .contents .social-links h4{
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+.home .contents .social-links .links svg{
+    height: 100%;
+    width: 25px;
+    margin-right: 1.5rem;
+    transition: fill 0.4s ease-in, transform 0.3s ease-in;
+}
+
+.home .contents .social-links .links svg:hover{
+    fill: var(--pr-color);
+    transform: scale(1.2)
+}
+/* service code geas here */
+
+
+.services-conainter{
+    display: flex;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
+    background-color: var(--accent-color);
+}
+
+.service-contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem;
+}
+.service-contents h2{
+    height: 20%;
+    font-size: 35px;
+    width: 100%;
+    text-align: left;
+    color: var(--sc-color);
+    margin-bottom: 2rem;
+}
+
+.service-contents .services{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.service-contents .services .service{
+    transition: transform 0.3s ease-in;
+    background-color: var(--pr-color);
+    padding: 1rem;
+    border-radius: var(--br-sec-size);
+    position: relative;
+}
+.service-contents .services .service:hover{
+    transform: scale(1.1);
+}
+
+.service-contents .services .service span{
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    border-radius: 50%;
+    top:0;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 30px rgba(1, 0, 0, 0.2);
+}
+
+.service-contents .services .service img{
+    width: 50px;
+    height: 50px;
+}
+
+.service-contents .services .service .ser-content{
+    margin-top: 3rem;
+}
+.service-contents .services .service .ser-content h4{
+    color: var(--sc-color);
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+.service-contents .services .service .ser-content p{
+    color: var(--sc-color);
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.service-contents .services .service .ser-content button{
+    padding: 10px 50px;
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: var(--br-sec-size);
+    box-shadow: 0 5px 30px rgba(1, 0, 0, 0.2);
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.3s ease-in;
+}
+
+.service-contents .services .service .ser-content button:hover{
+    transform: scale(1.05);
+}
+
+
+/* recrutement section code css */
+
+.container .recrute{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.container .recrute img{
+    width: 400px;
+}
+
+.container .recrutre .contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.recrute .contents h2 {
+    color: var(--pr-color);
+    margin-bottom: 2rem;
+}
+.recrute .contents p{
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+.recrute .contents a{
+    color: var(--accent-color);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-in;
+}
+.recrute .contents a:hover{
+    transform: scaleX(1.5);
+}
+
+.recrute .contents a::after{
+    transition: all 0.2s ease-in;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 20px;
+    background-color: var(--pr-color);
+    right: -30px;
+    top: 50%;
+    border-radius: 50px;
+}
+
+.recrute .contents a:hover::after{
+    width: 50px;
+    right: -60px;
+}
+
+
+/* metting content ou conférence code css */
+
+.metting-content {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(360deg,var(--accent-color) , transparent),
+                url(/assets/images/conference-cover-image.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: start;
+}
+
+.metting-content .contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 50%;
+}
+.metting-content .contents h2{
+    color: var(--sc-color);
+    margin-bottom: 2rem;
+}
+.metting-content .contents p{
+    color: var(--sc-color);
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 5rem;
+}
+
+.metting-content .contents .programs{
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.metting-content .contents .programs .day{
+    color: var(--sc-color);
+    font-weight: 100;
+}
+.metting-content .contents .programs .info{
+    border-right: 0.5px solid var(--sc-color);
+    padding-right: 1rem;
+}
+.metting-content .contents .programs .time{
+    color: white;
+}
+
+.metting-content .contents a{
+    background-color: var(--pr-color);
+    height: 2.5rem;
+    overflow: hidden;
+    color: var(--sc-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    width: 70%;
+    font-weight: 300;
+    transition: transform 0.3s ease-in;
+}
+.metting-content .contents a:hover{
+    transform: scale(1.1);
+}
+
+.metting-content .contents a img{
+    width: 15px;
+    height: 15px;
+}
+
+
+.metting-content img{
+    width: 50%;
+    border-radius: var(--br-size);
+    position: relative;
+    margin-left: 2rem;
+    box-shadow: 0 0 50px rgba(0, 0, 1, 0.2);
+    transition: .3s  ease;
+}
+.metting-content img:hover{
+    transform: scale(1.1);
+}
+/* testemonial contents */
+
+.testemonial-contents{
+    background-color: var(--accent-color);
+    min-height: 50vh;
+    position: relative;
+}
+
+.testemonial-contents .contents{
+    width: 50%;
+}
+
+.testemonial-contents::after{
+    content: "";
+    height: 2px;
+    width: 100px;
+    background-color: white;
+    top: 0;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    transition: width 0.3s ease-in;
+}
+.testemonial-contents:hover::after{
+    width: 130px;
+}
+.testemonial-contents .contents h2{
+    color: var(--sc-color);
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.testemonial-contents .contents h4{
+    text-align: center;
+    color: var(--sc-color);
+}
+.testemonial-contents .contents p{
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    position: relative;
+}
+.testemonial-contents .contents p::before{
+    content: "\"";
+    font-family: MS PGothic;
+    color: red;
+    position: absolute;
+    font-size: 100px;
+    top: -1rem;
+    left: -0.5rem;
+}
+.testemonial-contents .contents p::after{
+    content: "\"";
+    color: red;
+    position: absolute;
+    font-size: 100px;
+    font-family: MS PGothic;
+    bottom: -2rem;
+    right: -0.5rem;
+}
+
+
+/* footer code */
+
+.footer{
+    min-height: 40vh;
+    background-color: var(--pr-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 3rem;
+}
+
+
+.footer .contents{
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.footer .contents .content{
+   display: flex;
+   justify-content: start;
+   flex-direction: column;
+   align-items: start;
+}
+
+.footer .contents .content h4{
+    color: white;
+}
+
+.footer .contents .content ul{
+    list-style: none;
+    padding: 1rem;
+}
+
+.footer .contents .content ul li a{
+    color: var(--sc-color);
+    font-size: 14px;
+    filter: opacity(70%);
+    transition: 0.3s ease-in;
+}
+.footer .contents .content ul li a:hover{
+    filter:opacity(100%);
+}
+
+.footer .contents .joint-us{
+    width: 40%;
+    padding-left: 8rem;
+}
+
+
+.footer .contents .joint-us h4{
+    font-size: 12px;
+}
+
+.footer .contents .joint-us svg{
+    height: 20px;
+    width: 20px;
+    margin-right: .5rem;
+    fill: var(--sc-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in;
+}
+.footer .contents .joint-us svg:hover{
+    transform: scale(1.5);
+    fill: var(--accent-color);
+    /* background-color: var(--sc-color); */
+}
+
+.footer .contents .joint-us .newsletter{
+    margin-top: 1rem;
+    gap: 1rem;
+}
+.footer .contents .joint-us .newsletter .input{
+    margin-top: 1rem;
+    background-color: white;    
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.footer .contents .joint-us .newsletter .input:hover{
+    transform: scale(1.1);
+}
+.footer .contents .joint-us .newsletter .input input::placeholder{
+    filter: opacity(50%);
+    color: var(--accent-color);
+}
+
+.footer .contents .joint-us .newsletter .input input{
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--accent-color);
+    padding: 5px 10px;
+}
+.footer .contents .joint-us .newsletter .input span{
+    color: white;
+    background-color: var(--accent-color);
+    height: 100%;
+    padding: 5px 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* copyright section */
+.footer .copyright{
+    color: white;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 12px;
+    position: relative;
+}
+.footer .copyright::after{
+    content: "";
+    width: 100px;
+    height: 1px;
+    top: -1rem;
+    left: 50%;
+    position: absolute;
+    background-color: var(--sc-color);
+    transform: translate(-50%, 50%);
+    transition: width 0.3s ease-in;
+}
+.footer:hover .copyright::after{
+    width: 200px;
+}
